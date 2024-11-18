@@ -1,0 +1,213 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_ui_meditation_app/screen/menu/meditate/components/app_category.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'home/components/app_card_rectangle.dart';
+
+class MeditatePage extends StatelessWidget {
+  const MeditatePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> items = [
+      {
+        'text': '7 Days of Calm',
+        'svg': 'assets/images/resource/days_of_calm.svg',
+      },
+      {
+        'text': 'Anxiet Release',
+        'svg': 'assets/images/resource/anxiet release.svg',
+      },
+      {
+        'text': 'Beach',
+        'svg': 'assets/images/resource/beach.svg',
+      },
+      {
+        'text': 'Nature',
+        'svg': 'assets/images/resource/nature.svg',
+      },
+    ];
+
+    return Column(
+      children: [
+        const SizedBox(height: 20),
+        Expanded(
+          child: ListView(
+            children: [
+              // Section 1
+              Stack(
+                children: [
+                  if (Theme.of(context).brightness == Brightness.dark) ...[
+                    SizedBox(
+                      width: double.infinity,
+                      child: SvgPicture.asset(
+                        'assets/images/welcome/header.svg',
+                        fit: BoxFit
+                            .contain, // Menghindari overflow dengan menjaga rasio aspek
+                      ),
+                    ),
+                  ],
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 20),
+                        Text('Meditate',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineLarge
+                                ?.copyWith(fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 5),
+                        Text(
+                          'we can learn how to recognize when our minds are doing their normal everyday acrobatics.',
+                          style: GoogleFonts.roboto(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
+                            color: const Color(0xFFA1A4B2),
+                          ),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+
+              // Section 2
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Row(
+                  children: [],
+                ),
+              ),
+
+              // Section 3
+              const AppCategory(),
+
+              // Section 4
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: AppCardRectangle(
+                  color: Color(0xFFF1DDCF),
+                  bubbleColor: [
+                    Color(0xFFECD3C2),
+                    Color(0xFFFF7C6B),
+                    Color(0xFFFAC978)
+                  ],
+                  title: 'Daily Calm',
+                  type: 'APR 30',
+                  duration: 'PAUSE PRACTICE',
+                ),
+              ),
+
+              // Section 5
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Kolom pertama
+                    Expanded(
+                      child: Column(
+                        children: items
+                            .asMap()
+                            .entries
+                            .where((entry) =>
+                                entry.key % 2 == 0) // Filter elemen genap
+                            .map((entry) => buildGridItem(
+                                entry.value['text'], entry.value['svg']))
+                            .toList(),
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    // Kolom kedua
+                    Expanded(
+                      child: Column(
+                        children: items
+                            .asMap()
+                            .entries
+                            .where((entry) =>
+                                entry.key % 2 != 0) // Filter elemen ganjil
+                            .map((entry) => buildGridItem(
+                                entry.value['text'], entry.value['svg']))
+                            .toList(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        )
+      ],
+    );
+  }
+
+  Widget buildGridItem(String text, String svg) {
+    return Container(
+      padding: const EdgeInsets.only(bottom: 10),
+      margin: const EdgeInsets.all(8),
+      // height: height,
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
+      child: Center(
+        child: Stack(
+          children: [
+            ClipRRect(
+              borderRadius: const BorderRadius.all(
+                Radius.circular(10),
+              ),
+              child: SvgPicture.asset(
+                svg,
+                fit: BoxFit
+                    .contain, // Menghindari overflow dengan menjaga rasio aspek
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              left: 0,
+              right: 0,
+              child: SizedBox(
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(10),
+                      bottomRight: Radius.circular(10)), // Sudut border
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(
+                        sigmaX: 5.0, sigmaY: 5.0), // Intensitas blur
+                    child: Container(
+                      height: 52,
+                      // width: 170,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            Colors.white.withOpacity(0.1),
+                            Colors.white.withOpacity(0.2),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          text,
+                          style: GoogleFonts.roboto(
+                              fontSize: 18, color: Colors.white),
+                          textAlign: TextAlign.start,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
