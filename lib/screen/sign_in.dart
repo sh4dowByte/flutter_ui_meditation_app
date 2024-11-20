@@ -95,7 +95,7 @@ class SignInPage extends StatelessWidget {
                       AppButton(
                         'LOG IN',
                         onTap: () =>
-                            Navigator.pushNamed(context, Routes.chooseTopic),
+                            Navigator.pushNamed(context, Routes.welcome),
                       ),
                       const SizedBox(height: 40),
                       Text(

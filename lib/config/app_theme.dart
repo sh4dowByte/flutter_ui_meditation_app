@@ -15,7 +15,16 @@ class AppTheme {
       primaryColor: const Color(0xFF8E97FD),
       primaryColorDark: const Color(0xFF3F414E),
       primaryColorLight: Colors.white,
-      dividerTheme: DividerThemeData(color: secondaryTextColor),
+      dividerTheme: DividerThemeData(color: Colors.grey[100]),
+      tabBarTheme: TabBarTheme(
+        splashFactory: NoSplash.splashFactory, // Menonaktifkan ripple
+        overlayColor: MaterialStateProperty.all(
+            Colors.transparent), // Menonaktifkan hover
+      ),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
       textTheme: TextTheme(
         displayLarge: TextStyle(
           fontSize: 57, // Display terbesar untuk teks utama atau header besar
@@ -100,7 +109,16 @@ class AppTheme {
       primaryColor: const Color(0xFF8E97FD),
       primaryColorDark: const Color(0xFFE6E7F2),
       primaryColorLight: Colors.black,
-      dividerTheme: DividerThemeData(color: secondaryTextColor),
+      dividerTheme: DividerThemeData(color: Colors.grey[800]),
+      tabBarTheme: TabBarTheme(
+        splashFactory: NoSplash.splashFactory, // Menonaktifkan ripple
+        overlayColor: MaterialStateProperty.all(
+            Colors.transparent), // Menonaktifkan hover
+      ),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Color(0xFF02174C),
+        elevation: 0,
+      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color(0xFF03174D), // Warna background untuk mode gelap
       ),

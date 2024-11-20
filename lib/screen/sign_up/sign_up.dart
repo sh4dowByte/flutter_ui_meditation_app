@@ -102,7 +102,7 @@ class SignUpPage extends StatelessWidget {
                       AppButton(
                         'GET STARTED',
                         onTap: () =>
-                            Navigator.pushNamed(context, Routes.chooseTopic),
+                            Navigator.pushNamed(context, Routes.welcome),
                       ),
                     ],
                   ),

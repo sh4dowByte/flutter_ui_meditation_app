@@ -6,6 +6,7 @@ export 'reminders.dart';
 export 'play_on.dart';
 export 'menu/music.dart';
 export 'menu.dart';
+export 'welcome.dart';
 
 export 'menu/home/home.dart';
 export 'menu/meditate/meditate.dart';

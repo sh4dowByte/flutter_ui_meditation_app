@@ -105,7 +105,11 @@ class SleepMusic extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children: [
-                    const Flexible(flex: 1, child: AppBackButton()),
+                    Flexible(
+                        flex: 1,
+                        child: AppBackButton(
+                          onTap: () => Navigator.pop(context),
+                        )),
                     Expanded(
                       flex: 4,
                       child: Text(
@@ -113,7 +117,7 @@ class SleepMusic extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
-                            .headlineLarge
+                            .headlineMedium
                             ?.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),

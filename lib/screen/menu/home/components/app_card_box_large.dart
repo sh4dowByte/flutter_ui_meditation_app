@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../config/routes.dart';
 import '../../../../utils/color.dart';
 
 class AppCardBoxLarge extends StatelessWidget {
@@ -54,22 +55,26 @@ class AppCardBoxLarge extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 22),
-          Container(
-              decoration: BoxDecoration(
-                color:
-                    brightness == Brightness.dark ? Colors.white : Colors.black,
-                borderRadius: const BorderRadius.all(Radius.circular(25)),
-              ),
-              height: 35,
-              width: 70,
-              child: Center(
-                  child: Text(
-                'Start',
-                style: TextStyle(
-                    color: brightness != Brightness.dark
-                        ? Colors.white
-                        : Colors.black),
-              ))),
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, Routes.sleepMusic),
+            child: Container(
+                decoration: BoxDecoration(
+                  color: brightness == Brightness.dark
+                      ? Colors.white
+                      : Colors.black,
+                  borderRadius: const BorderRadius.all(Radius.circular(25)),
+                ),
+                height: 35,
+                width: 70,
+                child: Center(
+                    child: Text(
+                  'Start',
+                  style: TextStyle(
+                      color: brightness != Brightness.dark
+                          ? Colors.white
+                          : Colors.black),
+                ))),
+          ),
         ],
       ),
     );
