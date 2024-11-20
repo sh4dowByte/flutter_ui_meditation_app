@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../utils/color.dart';
 
@@ -54,18 +53,10 @@ class AppCardBox extends StatelessWidget {
                 children: [
                   Text(
                     title!,
-                    style: GoogleFonts.roboto(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: textColor,
-                    ),
-                  ),
-                  Text(
-                    type!,
-                    style: GoogleFonts.roboto(
-                      fontSize: 11,
-                      color: textColor,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(color: textColor),
                   ),
                 ],
               ),
@@ -77,29 +68,30 @@ class AppCardBox extends StatelessWidget {
                 children: [
                   Text(
                     duration!,
-                    style: GoogleFonts.roboto(
-                      fontSize: 12,
-                      color: textColor,
-                    ),
+                    style: Theme.of(context)
+                        .textTheme
+                        .labelSmall!
+                        .copyWith(color: textColor),
                   ),
                   Container(
-                      decoration: BoxDecoration(
-                        color: brightness == Brightness.dark
-                            ? Colors.white
-                            : Colors.black,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(25)),
-                      ),
-                      height: 35,
-                      width: 70,
-                      child: Center(
-                          child: Text(
+                    decoration: BoxDecoration(
+                      color: brightness == Brightness.dark
+                          ? Colors.white
+                          : Colors.black,
+                      borderRadius: const BorderRadius.all(Radius.circular(25)),
+                    ),
+                    height: 35,
+                    width: 70,
+                    child: Center(
+                      child: Text(
                         'Start',
-                        style: TextStyle(
+                        style: Theme.of(context).textTheme.labelSmall!.copyWith(
                             color: brightness != Brightness.dark
                                 ? Colors.white
                                 : Colors.black),
-                      ))),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

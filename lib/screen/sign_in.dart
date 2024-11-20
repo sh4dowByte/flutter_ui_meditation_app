@@ -1,6 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_meditation_app/components/components.dart';
+
+import '../config/routes.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -32,10 +35,14 @@ class SignInPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Flexible(
+                Flexible(
                   flex: 1,
                   child: Row(
-                    children: [AppBackButton()],
+                    children: [
+                      AppBackButton(
+                        onTap: () => Navigator.pop(context),
+                      )
+                    ],
                   ),
                 ),
                 Flexible(
@@ -85,8 +92,10 @@ class SignInPage extends StatelessWidget {
                         hintText: 'Password',
                       ),
                       const SizedBox(height: 20),
-                      const AppButton(
+                      AppButton(
                         'LOG IN',
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.chooseTopic),
                       ),
                       const SizedBox(height: 40),
                       Text(
@@ -102,12 +111,17 @@ class SignInPage extends StatelessWidget {
                     text: TextSpan(
                       text: 'ALREADY HAVE AN ACCOUNT? ',
                       style: Theme.of(context).textTheme.titleSmall,
-                      children: const <TextSpan>[
+                      children: <TextSpan>[
                         TextSpan(
                           text: 'SIGN UP',
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: Colors.blue,
                           ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushNamed(context, Routes.signUp);
+                              // Handle the click
+                            },
                         ),
                       ],
                     ),

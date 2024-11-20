@@ -11,75 +11,76 @@ class AppTheme {
 
     return ThemeData(
       brightness: Brightness.light,
+      fontFamily: GoogleFonts.abel().fontFamily,
       primaryColor: const Color(0xFF8E97FD),
       primaryColorDark: const Color(0xFF3F414E),
       primaryColorLight: Colors.white,
       dividerTheme: DividerThemeData(color: secondaryTextColor),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.abel(
+        displayLarge: TextStyle(
           fontSize: 57, // Display terbesar untuk teks utama atau header besar
           color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displayMedium: GoogleFonts.abel(
+        displayMedium: TextStyle(
           fontSize:
               45, // Display sedang, digunakan untuk header besar namun tidak dominan
           color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displaySmall: GoogleFonts.abel(
+        displaySmall: TextStyle(
           fontSize: 36, // Display kecil, untuk sub-header atau judul penting
           color: primaryTextColor,
           fontWeight: FontWeight.bold,
         ),
-        headlineLarge: GoogleFonts.abel(
+        headlineLarge: TextStyle(
           fontSize: 32, // Ukuran untuk headline atau judul utama
           color: secondaryTextColor,
         ),
-        headlineMedium: GoogleFonts.abel(
+        headlineMedium: TextStyle(
           fontSize: 28, // Ukuran headline menengah
           color: primaryTextColor,
         ),
-        headlineSmall: GoogleFonts.abel(
+        headlineSmall: TextStyle(
           fontSize: 24, // Ukuran headline kecil
           color: primaryTextColor,
         ),
-        titleLarge: GoogleFonts.abel(
+        titleLarge: TextStyle(
           fontSize: 22, // Ukuran besar untuk judul utama di layar
           color: secondaryTextColor,
         ),
-        titleMedium: GoogleFonts.abel(
+        titleMedium: TextStyle(
           fontSize: 18, // Ukuran sedang untuk judul atau subtitle
           color: primaryTextColor,
           fontWeight: FontWeight.bold,
         ),
-        titleSmall: GoogleFonts.abel(
+        titleSmall: TextStyle(
           fontSize: 14, // Ukuran kecil untuk subtitle atau label
           color: secondaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        bodyLarge: GoogleFonts.abel(
+        bodyLarge: TextStyle(
           fontSize: 16, // Ukuran teks utama
           color: primaryTextColor,
         ),
-        bodyMedium: GoogleFonts.abel(
+        bodyMedium: TextStyle(
           fontSize: 14, // Ukuran teks sekunder
           color: primaryTextColor,
         ),
-        bodySmall: GoogleFonts.abel(
+        bodySmall: TextStyle(
           fontSize: 12, // Ukuran untuk teks tambahan atau catatan
           color: secondaryTextColor,
         ),
-        labelLarge: GoogleFonts.abel(
+        labelLarge: TextStyle(
           fontSize:
               14, // Label besar, digunakan untuk tombol atau label penting
           color: secondaryTextColor,
         ),
-        labelMedium: GoogleFonts.abel(
+        labelMedium: TextStyle(
           fontSize: 12, // Label sedang untuk UI elemen
           color: secondaryTextColor,
         ),
-        labelSmall: GoogleFonts.abel(
+        labelSmall: TextStyle(
           fontSize: 11, // Label kecil, digunakan untuk indikator atau ikon
           color: secondaryTextColor,
         ),
@@ -94,6 +95,7 @@ class AppTheme {
 
     return ThemeData(
       brightness: Brightness.dark,
+      fontFamily: GoogleFonts.abel().fontFamily,
       scaffoldBackgroundColor: const Color(0xFF02174C),
       primaryColor: const Color(0xFF8E97FD),
       primaryColorDark: const Color(0xFFE6E7F2),
@@ -103,70 +105,70 @@ class AppTheme {
         backgroundColor: Color(0xFF03174D), // Warna background untuk mode gelap
       ),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.abel(
+        displayLarge: TextStyle(
           fontSize: 57, // Display terbesar untuk teks utama atau header besar
           color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displayMedium: GoogleFonts.abel(
+        displayMedium: TextStyle(
           fontSize:
               45, // Display sedang, digunakan untuk header besar namun tidak dominan
           color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displaySmall: GoogleFonts.abel(
+        displaySmall: TextStyle(
           fontSize: 36, // Display kecil, untuk sub-header atau judul penting
           color: primaryTextColor,
           fontWeight: FontWeight.bold,
         ),
-        headlineLarge: GoogleFonts.abel(
+        headlineLarge: TextStyle(
           fontSize: 32, // Ukuran untuk headline atau judul utama
           color: secondaryTextColor,
         ),
-        headlineMedium: GoogleFonts.abel(
+        headlineMedium: TextStyle(
           fontSize: 28, // Ukuran headline menengah
           color: primaryTextColor,
         ),
-        headlineSmall: GoogleFonts.abel(
+        headlineSmall: TextStyle(
           fontSize: 24, // Ukuran headline kecil
           color: primaryTextColor,
         ),
-        titleLarge: GoogleFonts.abel(
+        titleLarge: TextStyle(
           fontSize: 22, // Ukuran besar untuk judul utama di layar
           color: secondaryTextColor,
         ),
-        titleMedium: GoogleFonts.abel(
+        titleMedium: TextStyle(
           fontSize: 18, // Ukuran sedang untuk judul atau subtitle
           color: primaryTextColor,
           fontWeight: FontWeight.bold,
         ),
-        titleSmall: GoogleFonts.abel(
+        titleSmall: TextStyle(
           fontSize: 14, // Ukuran kecil untuk subtitle atau label
           color: secondaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        bodyLarge: GoogleFonts.abel(
+        bodyLarge: TextStyle(
           fontSize: 16, // Ukuran teks utama
           color: primaryTextColor,
         ),
-        bodyMedium: GoogleFonts.abel(
+        bodyMedium: TextStyle(
           fontSize: 14, // Ukuran teks sekunder
           color: primaryTextColor,
         ),
-        bodySmall: GoogleFonts.abel(
+        bodySmall: TextStyle(
           fontSize: 12, // Ukuran untuk teks tambahan atau catatan
           color: secondaryTextColor,
         ),
-        labelLarge: GoogleFonts.abel(
+        labelLarge: TextStyle(
           fontSize:
               14, // Label besar, digunakan untuk tombol atau label penting
           color: secondaryTextColor,
         ),
-        labelMedium: GoogleFonts.abel(
+        labelMedium: TextStyle(
           fontSize: 12, // Label sedang untuk UI elemen
           color: secondaryTextColor,
         ),
-        labelSmall: GoogleFonts.abel(
+        labelSmall: TextStyle(
           fontSize: 11, // Label kecil, digunakan untuk indikator atau ikon
           color: secondaryTextColor,
         ),

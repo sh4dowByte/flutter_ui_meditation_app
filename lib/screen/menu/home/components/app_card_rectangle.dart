@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../utils/color.dart';
 
@@ -47,7 +46,10 @@ class AppCardRectangle extends StatelessWidget {
                     'assets/images/resource/bubble_1.svg',
                     fit: BoxFit.contain,
                     height: 70,
-                    color: bubbleColor[2],
+                    colorFilter: ColorFilter.mode(
+                      bubbleColor[2],
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),
@@ -58,7 +60,10 @@ class AppCardRectangle extends StatelessWidget {
                     'assets/images/resource/bubble_2.svg',
                     fit: BoxFit.contain,
                     height: 30,
-                    color: bubbleColor[1],
+                    colorFilter: ColorFilter.mode(
+                      bubbleColor[1],
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),
@@ -73,7 +78,10 @@ class AppCardRectangle extends StatelessWidget {
                     'assets/images/resource/bubble_3.svg',
                     fit: BoxFit.contain,
                     height: 95,
-                    color: bubbleColor[0],
+                    colorFilter: ColorFilter.mode(
+                      bubbleColor[0],
+                      BlendMode.srcIn,
+                    ),
                   ),
                 ),
               ),
@@ -88,28 +96,27 @@ class AppCardRectangle extends StatelessWidget {
                       children: [
                         Text(
                           title,
-                          style: GoogleFonts.roboto(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: textColor,
-                          ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(color: textColor),
                         ),
                         Row(
                           children: [
                             Text(
                               type,
-                              style: GoogleFonts.roboto(
-                                fontSize: 11,
-                                color: textColor,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(color: textColor),
                             ),
                             const SizedBox(width: 10),
                             Text(
                               duration,
-                              style: GoogleFonts.roboto(
-                                fontSize: 12,
-                                color: textColor,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .labelSmall!
+                                  .copyWith(color: textColor),
                             ),
                           ],
                         ),

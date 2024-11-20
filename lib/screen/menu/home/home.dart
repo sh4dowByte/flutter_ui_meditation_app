@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_meditation_app/components/components.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'components/app_card_rectangle.dart';
 import 'components/app_card_box.dart';
 import 'components/app_card_tile.dart';
@@ -44,7 +43,15 @@ class HomePage extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(height: 30),
-        const AppSvg('assets/images/welcome/silent_moon.svg'),
+        Theme.of(context).brightness == Brightness.light
+            ? const AppSvg(
+                'assets/images/welcome/silent_moon.svg',
+                replaceCollor: '3F414E',
+                currentCollor: 'FFFFFF',
+              )
+            : const AppSvg(
+                'assets/images/welcome/silent_moon.svg',
+              ),
         const SizedBox(height: 10),
         Expanded(
           child: ListView(
@@ -56,7 +63,7 @@ class HomePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Good Morning, Users',
+                      'Good ${Theme.of(context).brightness == Brightness.dark ? 'Night' : 'Morning'}, Ahmad Juhdi',
                       style: Theme.of(context)
                           .textTheme
                           .headlineMedium
@@ -64,11 +71,7 @@ class HomePage extends StatelessWidget {
                     ),
                     Text(
                       'We Wish you have a good day',
-                      style: GoogleFonts.roboto(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w300,
-                        color: const Color(0xFFA1A4B2),
-                      ),
+                      style: Theme.of(context).textTheme.titleLarge,
                     )
                   ],
                 ),

@@ -35,9 +35,12 @@ class _MusicPageState extends State<MusicPage> {
                 'assets/images/musicv2/buuble1.svg',
                 fit: BoxFit.contain,
                 // height: 70,
-                color: isDarkMode
-                    ? const Color(0xFF1F265E)
-                    : const Color(0xFFF2EDE4),
+                colorFilter: ColorFilter.mode(
+                  isDarkMode
+                      ? const Color(0xFF1F265E)
+                      : const Color(0xFFF2EDE4),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),
@@ -48,9 +51,12 @@ class _MusicPageState extends State<MusicPage> {
                 'assets/images/musicv2/buuble2.svg',
                 fit: BoxFit.contain,
                 // height: 70,
-                color: isDarkMode
-                    ? const Color(0xFF1F265E)
-                    : const Color(0xFFF2EDE4),
+                colorFilter: ColorFilter.mode(
+                  isDarkMode
+                      ? const Color(0xFF1F265E)
+                      : const Color(0xFFF2EDE4),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),
@@ -61,9 +67,12 @@ class _MusicPageState extends State<MusicPage> {
                 'assets/images/musicv2/bubble3.svg',
                 fit: BoxFit.contain,
                 // height: 70,
-                color: isDarkMode
-                    ? const Color(0xFF1F265E)
-                    : const Color(0xFFF2EDE4),
+                colorFilter: ColorFilter.mode(
+                  isDarkMode
+                      ? const Color(0xFF1F265E)
+                      : const Color(0xFFF2EDE4),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),
@@ -74,9 +83,12 @@ class _MusicPageState extends State<MusicPage> {
                 'assets/images/musicv2/bubble4.svg',
                 fit: BoxFit.contain,
                 // height: 70,
-                color: isDarkMode
-                    ? const Color(0xFF1F265E)
-                    : const Color(0xFFF2EDE4),
+                colorFilter: ColorFilter.mode(
+                  isDarkMode
+                      ? const Color(0xFF1F265E)
+                      : const Color(0xFFF2EDE4),
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),

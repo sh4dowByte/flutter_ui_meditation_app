@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../components/components.dart';
+import '../config/routes.dart';
 
 class RemindersPage extends StatefulWidget {
   const RemindersPage({super.key});
@@ -105,13 +106,17 @@ class _RemindersPageState extends State<RemindersPage> {
                 children: [
                   AppButton(
                     'SAVE',
+                    onTap: () => Navigator.pushNamed(context, Routes.menu),
                   ),
                   const SizedBox(height: 10),
                   Center(
-                    child: Text(
-                      'NO THANKS',
-                      style: Theme.of(context).textTheme.titleSmall,
-                      textAlign: TextAlign.center,
+                    child: GestureDetector(
+                      onTap: () => Navigator.pushNamed(context, Routes.menu),
+                      child: Text(
+                        'NO THANKS',
+                        style: Theme.of(context).textTheme.titleSmall,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ],

@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
+import '../config/routes.dart';
 import '../utils/color.dart';
 
 class ChoseTopicPage extends StatelessWidget {
@@ -72,10 +72,12 @@ class ChoseTopicPage extends StatelessWidget {
                   100, // Setengah tinggi layar
               fit: BoxFit
                   .cover, // Mengatur SVG agar menutupi area yang diberikan
-              // ignore: deprecated_member_use
-              color: Theme.of(context).brightness == Brightness.light
-                  ? Color(0xFFFAF8F5)
-                  : Color.fromARGB(162, 3, 15, 44),
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).brightness == Brightness.light
+                    ? Color(0xFFFAF8F5)
+                    : Color.fromARGB(162, 3, 15, 44),
+                BlendMode.srcIn,
+              ),
             ),
           ),
           Column(
@@ -125,6 +127,8 @@ class ChoseTopicPage extends StatelessWidget {
                                 .where((entry) =>
                                     entry.key % 2 == 0) // Filter elemen genap
                                 .map((entry) => AppTopicItems(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, Routes.reminders),
                                     color: entry.value['color'],
                                     text: entry.value['text'],
                                     svg: entry.value['svg']))
@@ -141,6 +145,8 @@ class ChoseTopicPage extends StatelessWidget {
                                 .where((entry) =>
                                     entry.key % 2 != 0) // Filter elemen ganjil
                                 .map((entry) => AppTopicItems(
+                                    onTap: () => Navigator.pushNamed(
+                                        context, Routes.reminders),
                                     color: entry.value['color'],
                                     text: entry.value['text'],
                                     svg: entry.value['svg']))
@@ -163,6 +169,7 @@ class ChoseTopicPage extends StatelessWidget {
 class AppTopicItems extends StatelessWidget {
   const AppTopicItems({
     super.key,
+    this.onTap,
     required this.color,
     required this.text,
     required this.svg,
@@ -171,6 +178,7 @@ class AppTopicItems extends StatelessWidget {
   final Color color;
   final String text;
   final String svg;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -178,37 +186,40 @@ class AppTopicItems extends StatelessWidget {
     final textColor =
         brightness == Brightness.dark ? Colors.white : Colors.black;
 
-    return Container(
-      padding: EdgeInsets.only(bottom: 10),
-      margin: const EdgeInsets.all(8),
-      // height: height,
-      decoration: BoxDecoration(
-        color: color,
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 20),
-            SvgPicture.asset(
-              svg,
-              fit: BoxFit
-                  .contain, // Menghindari overflow dengan menjaga rasio aspek
-            ),
-            SizedBox(height: 20),
-            SizedBox(
-              width: 130,
-              child: Text(
-                text,
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(color: textColor),
-                textAlign: TextAlign.start,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.only(bottom: 10),
+        margin: const EdgeInsets.all(8),
+        // height: height,
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.all(Radius.circular(10)),
+        ),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 20),
+              SvgPicture.asset(
+                svg,
+                fit: BoxFit
+                    .contain, // Menghindari overflow dengan menjaga rasio aspek
               ),
-            ),
-          ],
+              SizedBox(height: 20),
+              SizedBox(
+                width: 130,
+                child: Text(
+                  text,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(color: textColor),
+                  textAlign: TextAlign.start,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

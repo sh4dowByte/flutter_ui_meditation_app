@@ -47,11 +47,10 @@ class AppCardBoxLarge extends StatelessWidget {
             child: Text(
               description!,
               textAlign: TextAlign.center,
-              style: GoogleFonts.roboto(
-                fontSize: 16,
-                color: textColor,
-                fontWeight: FontWeight.w100,
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyLarge!
+                  .copyWith(color: textColor, fontWeight: FontWeight.w100),
             ),
           ),
           const SizedBox(height: 22),

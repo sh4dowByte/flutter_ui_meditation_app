@@ -1,10 +1,8 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_meditation_app/screen/menu/meditate/components/app_category.dart';
-import 'package:google_fonts/google_fonts.dart';
 import '../home/components/app_card_rectangle.dart';
+import 'components/app_card_frozen.dart';
 
 class MeditatePage extends StatelessWidget {
   const MeditatePage({super.key});
@@ -63,11 +61,7 @@ class MeditatePage extends StatelessWidget {
                         const SizedBox(height: 5),
                         Text(
                           'we can learn how to recognize when our minds are doing their normal everyday acrobatics.',
-                          style: GoogleFonts.roboto(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300,
-                            color: const Color(0xFFA1A4B2),
-                          ),
+                          style: Theme.of(context).textTheme.bodyLarge,
                           textAlign: TextAlign.center,
                         )
                       ],
@@ -117,8 +111,9 @@ class MeditatePage extends StatelessWidget {
                             .entries
                             .where((entry) =>
                                 entry.key % 2 == 0) // Filter elemen genap
-                            .map((entry) => buildGridItem(
-                                entry.value['text'], entry.value['svg']))
+                            .map((entry) => AppCardFrozen(
+                                text: entry.value['text'],
+                                svg: entry.value['svg']))
                             .toList(),
                       ),
                     ),
@@ -131,8 +126,9 @@ class MeditatePage extends StatelessWidget {
                             .entries
                             .where((entry) =>
                                 entry.key % 2 != 0) // Filter elemen ganjil
-                            .map((entry) => buildGridItem(
-                                entry.value['text'], entry.value['svg']))
+                            .map((entry) => AppCardFrozen(
+                                text: entry.value['text'],
+                                svg: entry.value['svg']))
                             .toList(),
                       ),
                     ),
@@ -143,71 +139,6 @@ class MeditatePage extends StatelessWidget {
           ),
         )
       ],
-    );
-  }
-
-  Widget buildGridItem(String text, String svg) {
-    return Container(
-      padding: const EdgeInsets.only(bottom: 10),
-      margin: const EdgeInsets.all(8),
-      // height: height,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-      ),
-      child: Center(
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.all(
-                Radius.circular(10),
-              ),
-              child: SvgPicture.asset(
-                svg,
-                fit: BoxFit
-                    .contain, // Menghindari overflow dengan menjaga rasio aspek
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: SizedBox(
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(10),
-                      bottomRight: Radius.circular(10)), // Sudut border
-                  child: BackdropFilter(
-                    filter: ImageFilter.blur(
-                        sigmaX: 5.0, sigmaY: 5.0), // Intensitas blur
-                    child: Container(
-                      height: 52,
-                      // width: 170,
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Colors.white.withOpacity(0.1),
-                            Colors.white.withOpacity(0.2),
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          text,
-                          style: GoogleFonts.roboto(
-                              fontSize: 18, color: Colors.white),
-                          textAlign: TextAlign.start,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

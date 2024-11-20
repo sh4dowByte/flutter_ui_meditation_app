@@ -45,7 +45,7 @@ class _MenuPageState extends State<MenuPage> {
             color: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
             boxShadow: [
               BoxShadow(
-                color: Color.fromARGB(255, 6, 1, 1).withOpacity(0.1),
+                color: const Color.fromARGB(255, 6, 1, 1).withOpacity(0.1),
                 spreadRadius: 3,
                 blurRadius: 10,
                 // offset: Offset(10, -2), // Offset bayangan ke atas
@@ -90,9 +90,10 @@ class _MenuPageState extends State<MenuPage> {
           // ),
           child: SvgPicture.asset(
             "assets/images/icons/$icon.svg", // Path SVG kamu
-            color: _currentIndex == index
-                ? Colors.white
-                : Colors.grey, // Mengubah warna SVG menjadi biru
+            colorFilter: ColorFilter.mode(
+              _currentIndex == index ? Colors.white : Colors.grey,
+              BlendMode.srcIn,
+            ),
             width: _currentIndex == index ? 30 : 24,
             height: _currentIndex == index ? 30 : 24,
           )),

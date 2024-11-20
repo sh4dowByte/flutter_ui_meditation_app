@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_ui_meditation_app/components/app_circle_button.dart';
 import 'package:flutter_ui_meditation_app/components/components.dart';
 
@@ -11,7 +10,7 @@ class PlayOnPage extends StatefulWidget {
   const PlayOnPage({super.key});
 
   @override
-  _PlayOnPageState createState() => _PlayOnPageState();
+  State<PlayOnPage> createState() => _PlayOnPageState();
 }
 
 class _PlayOnPageState extends State<PlayOnPage> {
@@ -156,10 +155,11 @@ class _PlayOnPageState extends State<PlayOnPage> {
                       Row(
                         children: [
                           AppCircleButton(
+                              onTap: () => Navigator.pop(context),
                               icon: Icon(
-                            Icons.arrow_back,
-                            color: Colors.black,
-                          )),
+                                Icons.arrow_back,
+                                color: Colors.black,
+                              )),
                           SizedBox(width: 15),
                           AnimatedOpacity(
                             opacity: innnerBoxIsScrolled ? 1.0 : 0.0,

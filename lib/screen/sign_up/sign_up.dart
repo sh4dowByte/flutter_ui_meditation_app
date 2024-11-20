@@ -1,10 +1,13 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_meditation_app/components/components.dart';
 import 'package:flutter_ui_meditation_app/screen/sign_up/components/app_agree_privacy_policy.dart';
 
-class SignUp extends StatelessWidget {
-  const SignUp({super.key});
+import '../../config/routes.dart';
+
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +27,7 @@ class SignUp extends StatelessWidget {
                   Theme.of(context).brightness == Brightness.light
                       ? const Color(0xFFFAF8F5)
                       : const Color.fromARGB(162, 3, 15, 44),
-                  BlendMode.modulate),
+                  BlendMode.srcIn),
             ),
           ),
           Padding(
@@ -33,10 +36,14 @@ class SignUp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Flexible(
+                Flexible(
                   flex: 1,
                   child: Row(
-                    children: [AppBackButton()],
+                    children: [
+                      AppBackButton(
+                        onTap: () => Navigator.pop(context),
+                      )
+                    ],
                   ),
                 ),
                 Flexible(
@@ -74,25 +81,29 @@ class SignUp extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Flexible(
+                Flexible(
                   flex: 8,
                   child: Column(
                     children: [
-                      AppInputWithValidation(
+                      const AppInputWithValidation(
                         hintText: 'Name',
                       ),
-                      SizedBox(height: 20),
-                      AppInputWithValidation(
+                      const SizedBox(height: 20),
+                      const AppInputWithValidation(
                         hintText: 'Email',
                       ),
-                      SizedBox(height: 20),
-                      AppPasswordInput(
+                      const SizedBox(height: 20),
+                      const AppPasswordInput(
                         hintText: 'Password',
                       ),
-                      SizedBox(height: 20),
-                      AppAgreePrivacyPolicy(),
-                      SizedBox(height: 20),
-                      AppButton('GET STARTED'),
+                      const SizedBox(height: 20),
+                      const AppAgreePrivacyPolicy(),
+                      const SizedBox(height: 20),
+                      AppButton(
+                        'GET STARTED',
+                        onTap: () =>
+                            Navigator.pushNamed(context, Routes.chooseTopic),
+                      ),
                     ],
                   ),
                 ),
@@ -102,13 +113,18 @@ class SignUp extends StatelessWidget {
                     text: TextSpan(
                       text: 'ALREADY HAVE AN ACCOUNT? ',
                       style: Theme.of(context).textTheme.titleSmall,
-                      children: const <TextSpan>[
+                      children: <TextSpan>[
                         TextSpan(
-                          text: 'SIGN UP',
-                          style: TextStyle(
+                          text: 'SIGN IN',
+                          style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Color(0xFF7583CA),
                           ),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.pushNamed(context, Routes.signIn);
+                              // Handle the click
+                            },
                         ),
                       ],
                     ),

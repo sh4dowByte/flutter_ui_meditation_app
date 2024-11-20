@@ -1,8 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../components/components.dart';
+import '../config/routes.dart';
 
 class SignUpAndSigninPage extends StatelessWidget {
   const SignUpAndSigninPage({super.key});
@@ -89,17 +90,24 @@ class SignUpAndSigninPage extends StatelessWidget {
                       children: [
                         AppButton(
                           'SIGN UP',
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, Routes.signUp);
+                          },
                         ),
                         const SizedBox(height: 20),
                         RichText(
                           text: TextSpan(
                             text: 'ALREADY HAVE AN ACCOUNT? ',
                             style: Theme.of(context).textTheme.titleSmall,
-                            children: const <TextSpan>[
+                            children: <TextSpan>[
                               TextSpan(
                                 text: 'LOG IN',
-                                style: TextStyle(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    Navigator.pushNamed(context, Routes.signIn);
+                                    // Handle the click
+                                  },
+                                style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.blue,
                                 ),
