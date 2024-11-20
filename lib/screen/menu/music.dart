@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_meditation_app/components/app_circle_button.dart';
 
@@ -21,7 +22,10 @@ class _MusicPageState extends State<MusicPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isFirstRoute = Navigator.of(context).canPop() ==
+        false; // True jika halaman ini adalah yang pertama
     bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       backgroundColor: isDarkMode
           ? const Color(0xFF02174C)
@@ -92,15 +96,20 @@ class _MusicPageState extends State<MusicPage> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppCircleButton(),
-                    Row(
+                    Visibility(
+                      visible: !isFirstRoute,
+                      child: AppCircleButton(
+                        onTap: () => Navigator.pop(context),
+                      ),
+                    ),
+                    const Row(
                       children: [
                         AppCircleButton(
                           isTransparent: true,

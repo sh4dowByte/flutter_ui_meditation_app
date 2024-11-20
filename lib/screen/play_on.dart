@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_meditation_app/components/components.dart';
 
+import '../config/routes.dart';
 import 'menu/home/components/app_card_tile.dart';
 
 class PlayOnPage extends StatefulWidget {
@@ -457,37 +458,40 @@ class MusicTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(40),
-            ),
-            child: Icon(
-              Icons.play_arrow_rounded,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(width: 20),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                title,
-                style: Theme.of(context).textTheme.bodyMedium,
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pushNamed(Routes.music),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                color: Theme.of(context).primaryColor,
+                borderRadius: BorderRadius.circular(40),
               ),
-              Text(
-                duration,
-                style: Theme.of(context).textTheme.bodySmall,
+              child: Icon(
+                Icons.play_arrow_rounded,
+                color: Colors.white,
               ),
-            ],
-          ),
-        ],
+            ),
+            SizedBox(width: 20),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  duration,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

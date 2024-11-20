@@ -106,12 +106,20 @@ class _RemindersPageState extends State<RemindersPage> {
                 children: [
                   AppButton(
                     'SAVE',
-                    onTap: () => Navigator.pushNamed(context, Routes.menu),
+                    onTap: () => Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      Routes.menu,
+                      (Route<dynamic> route) => false,
+                    ),
                   ),
                   const SizedBox(height: 10),
                   Center(
                     child: GestureDetector(
-                      onTap: () => Navigator.pushNamed(context, Routes.menu),
+                      onTap: () => Navigator.pushNamedAndRemoveUntil(
+                        context,
+                        Routes.menu,
+                        (Route<dynamic> route) => false,
+                      ),
                       child: Text(
                         'NO THANKS',
                         style: Theme.of(context).textTheme.titleSmall,

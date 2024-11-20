@@ -10,6 +10,7 @@ class Routes {
   static const String playOption = '/play_option';
   static const String sleepMusic = '/sleep_music';
   static const String welcome = '/welcome';
+  static const String music = '/music';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -29,6 +30,8 @@ class Routes {
         return MaterialPageRoute(builder: (_) => const SleepMusic());
       case welcome:
         return MaterialPageRoute(builder: (_) => const WelcomePage());
+      case music:
+        return MaterialPageRoute(builder: (_) => const MusicPage());
       case '/':
       default:
         return MaterialPageRoute(
