@@ -32,7 +32,15 @@ class SignUpAndSigninPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const SizedBox(height: 80),
-                      const AppSvg('assets/images/welcome/silent_moon.svg'),
+                      Theme.of(context).brightness == Brightness.light
+                          ? const AppSvg(
+                              'assets/images/welcome/silent_moon.svg',
+                              replaceCollor: '3F414E',
+                              currentCollor: 'FFFFFF',
+                            )
+                          : const AppSvg(
+                              'assets/images/welcome/silent_moon.svg',
+                            ),
                       const SizedBox(height: 40),
                       SvgPicture.asset(
                         'assets/images/welcome/person_chair.svg',
@@ -67,7 +75,7 @@ class SignUpAndSigninPage extends StatelessWidget {
                           style: Theme.of(context)
                               .textTheme
                               .bodyLarge!
-                              .copyWith(fontWeight: FontWeight.w600),
+                              .copyWith(fontWeight: FontWeight.w100),
                         ),
                       ],
                     ),

@@ -6,75 +6,82 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTheme {
   // Light Theme Data
   static ThemeData get lightTheme {
+    Color primaryTextColor = const Color(0xFF3F414E);
+    Color secondaryTextColor = const Color(0xFFA1A4B2);
+
     return ThemeData(
       brightness: Brightness.light,
       primaryColor: const Color(0xFF8E97FD),
       primaryColorDark: const Color(0xFF3F414E),
       primaryColorLight: Colors.white,
+      dividerTheme: DividerThemeData(color: secondaryTextColor),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.roboto(
-          fontSize: 57,
-          color: const Color(0xFF3F414E),
+        displayLarge: GoogleFonts.abel(
+          fontSize: 57, // Display terbesar untuk teks utama atau header besar
+          color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displayMedium: GoogleFonts.roboto(
-          fontSize: 45,
-          color: const Color(0xFF3F414E),
+        displayMedium: GoogleFonts.abel(
+          fontSize:
+              45, // Display sedang, digunakan untuk header besar namun tidak dominan
+          color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displaySmall: GoogleFonts.roboto(
-          fontSize: 36,
-          color: const Color(0xFF3F414E),
-          fontWeight: FontWeight.w300,
-        ),
-        headlineLarge: GoogleFonts.roboto(
-          fontSize: 32,
-          color: const Color(0xFF3F414E),
-        ),
-        headlineMedium: GoogleFonts.roboto(
-          fontSize: 28,
-          color: const Color(0xFF3F414E),
-        ),
-        headlineSmall: GoogleFonts.roboto(
-          fontSize: 24,
-          color: const Color(0xFF3F414E),
-        ),
-        titleLarge: GoogleFonts.roboto(
-          fontSize: 22,
-          color: const Color(0xFF3F414E),
-        ),
-        titleMedium: GoogleFonts.roboto(
-          fontSize: 18,
-          color: const Color(0xFF3F414E),
+        displaySmall: GoogleFonts.abel(
+          fontSize: 36, // Display kecil, untuk sub-header atau judul penting
+          color: primaryTextColor,
           fontWeight: FontWeight.bold,
         ),
-        titleSmall: GoogleFonts.roboto(
-          fontSize: 14,
-          color: const Color(0xFFA1A4B2),
+        headlineLarge: GoogleFonts.abel(
+          fontSize: 32, // Ukuran untuk headline atau judul utama
+          color: secondaryTextColor,
         ),
-        bodyLarge: GoogleFonts.roboto(
-          fontSize: 16,
-          color: const Color(0xFF3F414E),
+        headlineMedium: GoogleFonts.abel(
+          fontSize: 28, // Ukuran headline menengah
+          color: primaryTextColor,
         ),
-        bodyMedium: GoogleFonts.roboto(
-          fontSize: 14,
-          color: const Color(0xFF3F414E),
+        headlineSmall: GoogleFonts.abel(
+          fontSize: 24, // Ukuran headline kecil
+          color: primaryTextColor,
         ),
-        bodySmall: GoogleFonts.roboto(
-          fontSize: 12,
-          color: const Color(0xFF3F414E),
+        titleLarge: GoogleFonts.abel(
+          fontSize: 22, // Ukuran besar untuk judul utama di layar
+          color: secondaryTextColor,
         ),
-        labelLarge: GoogleFonts.roboto(
-          fontSize: 14,
-          color: const Color(0xFF3F414E),
+        titleMedium: GoogleFonts.abel(
+          fontSize: 18, // Ukuran sedang untuk judul atau subtitle
+          color: primaryTextColor,
+          fontWeight: FontWeight.bold,
         ),
-        labelMedium: GoogleFonts.roboto(
-          fontSize: 12,
-          color: const Color(0xFF3F414E),
+        titleSmall: GoogleFonts.abel(
+          fontSize: 14, // Ukuran kecil untuk subtitle atau label
+          color: secondaryTextColor,
+          fontWeight: FontWeight.w300,
         ),
-        labelSmall: GoogleFonts.roboto(
-          fontSize: 11,
-          color: const Color(0xFFA1A4B2),
+        bodyLarge: GoogleFonts.abel(
+          fontSize: 16, // Ukuran teks utama
+          color: primaryTextColor,
+        ),
+        bodyMedium: GoogleFonts.abel(
+          fontSize: 14, // Ukuran teks sekunder
+          color: primaryTextColor,
+        ),
+        bodySmall: GoogleFonts.abel(
+          fontSize: 12, // Ukuran untuk teks tambahan atau catatan
+          color: secondaryTextColor,
+        ),
+        labelLarge: GoogleFonts.abel(
+          fontSize:
+              14, // Label besar, digunakan untuk tombol atau label penting
+          color: secondaryTextColor,
+        ),
+        labelMedium: GoogleFonts.abel(
+          fontSize: 12, // Label sedang untuk UI elemen
+          color: secondaryTextColor,
+        ),
+        labelSmall: GoogleFonts.abel(
+          fontSize: 11, // Label kecil, digunakan untuk indikator atau ikon
+          color: secondaryTextColor,
         ),
       ),
     );
@@ -82,84 +89,86 @@ class AppTheme {
 
   // Dark Theme Data (Opsional)
   static ThemeData get darkTheme {
+    Color primaryTextColor = const Color(0xFFFFFFFF);
+    Color secondaryTextColor = const Color(0xFF98A1BD);
+
     return ThemeData(
       brightness: Brightness.dark,
       scaffoldBackgroundColor: const Color(0xFF02174C),
       primaryColor: const Color(0xFF8E97FD),
       primaryColorDark: const Color(0xFFE6E7F2),
       primaryColorLight: Colors.black,
+      dividerTheme: DividerThemeData(color: secondaryTextColor),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: Color(0xFF03174D), // Warna background untuk mode gelap
-        // selectedItemColor: Colors.tealAccent,
-        // unselectedItemColor: Colors.grey,
       ),
       textTheme: TextTheme(
-        displayLarge: GoogleFonts.roboto(
+        displayLarge: GoogleFonts.abel(
           fontSize: 57, // Display terbesar untuk teks utama atau header besar
-          color: const Color(0xFFFFFFFF),
+          color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displayMedium: GoogleFonts.roboto(
+        displayMedium: GoogleFonts.abel(
           fontSize:
               45, // Display sedang, digunakan untuk header besar namun tidak dominan
-          color: const Color(0xFFFFFFFF),
+          color: primaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        displaySmall: GoogleFonts.roboto(
+        displaySmall: GoogleFonts.abel(
           fontSize: 36, // Display kecil, untuk sub-header atau judul penting
-          color: const Color(0xFFFFFFFF),
-          fontWeight: FontWeight.w300,
-        ),
-        headlineLarge: GoogleFonts.roboto(
-          fontSize: 32, // Ukuran untuk headline atau judul utama
-          color: const Color(0xFFE6E7F2),
-        ),
-        headlineMedium: GoogleFonts.roboto(
-          fontSize: 28, // Ukuran headline menengah
-          color: const Color(0xFFE6E7F2),
-        ),
-        headlineSmall: GoogleFonts.roboto(
-          fontSize: 24, // Ukuran headline kecil
-          color: const Color(0xFFE6E7F2),
-        ),
-        titleLarge: GoogleFonts.roboto(
-          fontSize: 22, // Ukuran besar untuk judul utama di layar
-          color: const Color(0xFFE6E7F2),
-        ),
-        titleMedium: GoogleFonts.roboto(
-          fontSize: 18, // Ukuran sedang untuk judul atau subtitle
-          color: const Color(0xFFE6E7F2),
+          color: primaryTextColor,
           fontWeight: FontWeight.bold,
         ),
-        titleSmall: GoogleFonts.roboto(
+        headlineLarge: GoogleFonts.abel(
+          fontSize: 32, // Ukuran untuk headline atau judul utama
+          color: secondaryTextColor,
+        ),
+        headlineMedium: GoogleFonts.abel(
+          fontSize: 28, // Ukuran headline menengah
+          color: primaryTextColor,
+        ),
+        headlineSmall: GoogleFonts.abel(
+          fontSize: 24, // Ukuran headline kecil
+          color: primaryTextColor,
+        ),
+        titleLarge: GoogleFonts.abel(
+          fontSize: 22, // Ukuran besar untuk judul utama di layar
+          color: secondaryTextColor,
+        ),
+        titleMedium: GoogleFonts.abel(
+          fontSize: 18, // Ukuran sedang untuk judul atau subtitle
+          color: primaryTextColor,
+          fontWeight: FontWeight.bold,
+        ),
+        titleSmall: GoogleFonts.abel(
           fontSize: 14, // Ukuran kecil untuk subtitle atau label
-          color: const Color(0xFFB0BEC5),
+          color: secondaryTextColor,
           fontWeight: FontWeight.w300,
         ),
-        bodyLarge: GoogleFonts.roboto(
+        bodyLarge: GoogleFonts.abel(
           fontSize: 16, // Ukuran teks utama
-          color: const Color(0xFFFFFFFF),
+          color: primaryTextColor,
         ),
-        bodyMedium: GoogleFonts.roboto(
+        bodyMedium: GoogleFonts.abel(
           fontSize: 14, // Ukuran teks sekunder
-          color: const Color(0xFFFFFFFF),
+          color: primaryTextColor,
         ),
-        bodySmall: GoogleFonts.roboto(
+        bodySmall: GoogleFonts.abel(
           fontSize: 12, // Ukuran untuk teks tambahan atau catatan
-          color: const Color(0xFFB0BEC5),
+          color: secondaryTextColor,
         ),
-        labelLarge: GoogleFonts.roboto(
+        labelLarge: GoogleFonts.abel(
           fontSize:
               14, // Label besar, digunakan untuk tombol atau label penting
-          color: const Color(0xFFE6E7F2),
+          color: secondaryTextColor,
         ),
-        labelMedium: GoogleFonts.roboto(
+        labelMedium: GoogleFonts.abel(
           fontSize: 12, // Label sedang untuk UI elemen
-          color: const Color(0xFFE6E7F2),
+          color: secondaryTextColor,
         ),
-        labelSmall: GoogleFonts.roboto(
+        labelSmall: GoogleFonts.abel(
           fontSize: 11, // Label kecil, digunakan untuk indikator atau ikon
-          color: const Color(0xFF98A1BD),
+          color: secondaryTextColor,
         ),
       ),
     );

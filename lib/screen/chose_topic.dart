@@ -65,14 +65,18 @@ class ChoseTopicPage extends StatelessWidget {
             right: 0,
             left: 0,
             child: SvgPicture.asset(
-                'assets/images/welcome/background_cloud.svg',
-                width: MediaQuery.of(context).size.width +
-                    30, // Menyesuaikan lebar SVG sesuai layar
-                height: MediaQuery.of(context).size.height +
-                    100, // Setengah tinggi layar
-                fit: BoxFit
-                    .cover, // Mengatur SVG agar menutupi area yang diberikan
-                color: Color.fromARGB(162, 3, 15, 44)),
+              'assets/images/welcome/background_cloud.svg',
+              width: MediaQuery.of(context).size.width +
+                  30, // Menyesuaikan lebar SVG sesuai layar
+              height: MediaQuery.of(context).size.height +
+                  100, // Setengah tinggi layar
+              fit: BoxFit
+                  .cover, // Mengatur SVG agar menutupi area yang diberikan
+              // ignore: deprecated_member_use
+              color: Theme.of(context).brightness == Brightness.light
+                  ? Color(0xFFFAF8F5)
+                  : Color.fromARGB(162, 3, 15, 44),
+            ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,18 +102,14 @@ class ChoseTopicPage extends StatelessWidget {
                       ),
                       Text(
                         'choose a topic to focuse on:',
-                        style: GoogleFonts.roboto(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w300,
-                          color: Color(0xFFA1A4B2),
-                        ),
+                        style: Theme.of(context).textTheme.titleLarge,
                       )
                     ],
                   ),
                 ),
               ),
               Flexible(
-                flex: 9,
+                flex: 11,
                 child: ListView(
                   padding: const EdgeInsets.all(8.0),
                   children: [
@@ -124,10 +124,10 @@ class ChoseTopicPage extends StatelessWidget {
                                 .entries
                                 .where((entry) =>
                                     entry.key % 2 == 0) // Filter elemen genap
-                                .map((entry) => buildGridItem(
-                                    entry.value['color'],
-                                    entry.value['text'],
-                                    entry.value['svg']))
+                                .map((entry) => AppTopicItems(
+                                    color: entry.value['color'],
+                                    text: entry.value['text'],
+                                    svg: entry.value['svg']))
                                 .toList(),
                           ),
                         ),
@@ -140,10 +140,10 @@ class ChoseTopicPage extends StatelessWidget {
                                 .entries
                                 .where((entry) =>
                                     entry.key % 2 != 0) // Filter elemen ganjil
-                                .map((entry) => buildGridItem(
-                                    entry.value['color'],
-                                    entry.value['text'],
-                                    entry.value['svg']))
+                                .map((entry) => AppTopicItems(
+                                    color: entry.value['color'],
+                                    text: entry.value['text'],
+                                    svg: entry.value['svg']))
                                 .toList(),
                           ),
                         ),
@@ -158,8 +158,22 @@ class ChoseTopicPage extends StatelessWidget {
       ),
     );
   }
+}
 
-  Widget buildGridItem(Color color, String text, String svg) {
+class AppTopicItems extends StatelessWidget {
+  const AppTopicItems({
+    super.key,
+    required this.color,
+    required this.text,
+    required this.svg,
+  });
+
+  final Color color;
+  final String text;
+  final String svg;
+
+  @override
+  Widget build(BuildContext context) {
     final brightness = getBrightness(color);
     final textColor =
         brightness == Brightness.dark ? Colors.white : Colors.black;
@@ -187,10 +201,10 @@ class ChoseTopicPage extends StatelessWidget {
               width: 130,
               child: Text(
                 text,
-                style: GoogleFonts.roboto(
-                  fontSize: 18,
-                  color: textColor,
-                ),
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(color: textColor),
                 textAlign: TextAlign.start,
               ),
             ),

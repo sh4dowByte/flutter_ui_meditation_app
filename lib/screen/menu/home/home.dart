@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                       'Good Morning, Users',
                       style: Theme.of(context)
                           .textTheme
-                          .headlineLarge
+                          .headlineMedium
                           ?.copyWith(fontWeight: FontWeight.bold),
                     ),
                     Text(
@@ -120,7 +120,7 @@ class HomePage extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
                   'Recomended for you',
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
               ),
               SizedBox(

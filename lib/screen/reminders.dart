@@ -50,17 +50,17 @@ class _RemindersPageState extends State<RemindersPage> {
             const SizedBox(height: 10),
             Container(
               margin: EdgeInsets.all(10),
-              height: 200,
+              height: 212,
               decoration: BoxDecoration(
                 color: Theme.of(context).brightness == Brightness.light
-                    ? CupertinoColors.systemBackground.color
+                    ? Color(0xFFF5F5F9)
                     : CupertinoColors.systemBackground.darkColor,
                 borderRadius: BorderRadius.all(Radius.circular(10)),
               ),
               child: CupertinoDatePicker(
                 backgroundColor:
                     Theme.of(context).brightness == Brightness.light
-                        ? CupertinoColors.systemBackground.color
+                        ? Color(0xFFF5F5F9)
                         : CupertinoColors.systemBackground.darkColor,
                 initialDateTime: _selectedDate,
                 mode: CupertinoDatePickerMode.time,

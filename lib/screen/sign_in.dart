@@ -42,7 +42,7 @@ class SignInPage extends StatelessWidget {
                   flex: 5,
                   child: Text(
                     'Welcome Back!',
-                    style: Theme.of(context).textTheme.displayLarge,
+                    style: Theme.of(context).textTheme.headlineMedium,
                     textAlign: TextAlign.left,
                   ),
                 ),

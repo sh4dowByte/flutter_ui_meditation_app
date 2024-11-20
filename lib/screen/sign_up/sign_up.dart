@@ -43,7 +43,7 @@ class SignUp extends StatelessWidget {
                   flex: 5,
                   child: Text(
                     'Create your account ',
-                    style: Theme.of(context).textTheme.displayLarge,
+                    style: Theme.of(context).textTheme.headlineMedium,
                     textAlign: TextAlign.left,
                   ),
                 ),

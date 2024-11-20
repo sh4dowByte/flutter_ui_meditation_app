@@ -11,7 +11,7 @@ class AppDaySelector extends StatefulWidget {
 class _AppDaySelectorState extends State<AppDaySelector> {
   // Menyimpan status apakah hari tertentu dipilih atau tidak
   final List<String> days = ["SU", "M", "T", "W", "TH", "F", "S"];
-  final List<bool> selectedDays = List.generate(7, (index) => false);
+  final List<bool> selectedDays = [true, true, true, true, false, false, true];
 
   void toggleDaySelection(int index) {
     setState(() {

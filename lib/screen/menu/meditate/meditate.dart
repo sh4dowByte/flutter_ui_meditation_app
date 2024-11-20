@@ -2,44 +2,31 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/home/components/app_card_box_large.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/home/components/app_card_tile.dart';
 import 'package:flutter_ui_meditation_app/screen/menu/meditate/components/app_category.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../home/components/app_card_rectangle.dart';
 
-class SleepPage extends StatelessWidget {
-  const SleepPage({super.key});
+class MeditatePage extends StatelessWidget {
+  const MeditatePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List recomended = [
+    final List<Map<String, dynamic>> items = [
       {
-        'color': '4C53B4',
-        'svg': 'night_island',
-        'title': 'Night Island',
-        'type': 'SLEEP MUSIC',
-        'duration': '3-10 MIN'
+        'text': '7 Days of Calm',
+        'svg': 'assets/images/resource/days_of_calm.svg',
       },
       {
-        'color': '4C53B4',
-        'svg': 'sweet sleep',
-        'title': 'Sweet Sleep',
-        'type': 'MEDITATION',
-        'duration': '3-10 MIN'
+        'text': 'Anxiet Release',
+        'svg': 'assets/images/resource/anxiet release.svg',
       },
       {
-        'color': '4C53B4',
-        'svg': 'moon sleep',
-        'title': 'Moon Sleep',
-        'type': 'MEDITATION',
-        'duration': '3-10 MIN'
+        'text': 'Beach',
+        'svg': 'assets/images/resource/beach.svg',
       },
       {
-        'color': '4C53B4',
-        'svg': 'cloud sleep',
-        'title': 'Cloud Sleep',
-        'type': 'MEDITATION',
-        'duration': '3-10 MIN'
+        'text': 'Nature',
+        'svg': 'assets/images/resource/nature.svg',
       },
     ];
 
@@ -62,39 +49,39 @@ class SleepPage extends StatelessWidget {
                       ),
                     ),
                   ],
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(height: 20),
-                          Text(
-                            'Sleep Stories',
+                  Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(height: 20),
+                        Text('Meditate',
                             style: Theme.of(context)
                                 .textTheme
-                                .headlineLarge
-                                ?.copyWith(fontWeight: FontWeight.bold),
+                                .headlineMedium
+                                ?.copyWith(fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 5),
+                        Text(
+                          'we can learn how to recognize when our minds are doing their normal everyday acrobatics.',
+                          style: GoogleFonts.roboto(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300,
+                            color: const Color(0xFFA1A4B2),
                           ),
-                          const SizedBox(height: 5),
-                          SizedBox(
-                            width: 300,
-                            child: Text(
-                              'Soothing bedtime stories to help you fall into a deep and natural sleep',
-                              style: GoogleFonts.roboto(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w300,
-                                color: const Color(0xFFA1A4B2),
-                              ),
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                        ],
-                      ),
+                          textAlign: TextAlign.center,
+                        )
+                      ],
                     ),
                   ),
                 ],
+              ),
+
+              // Section 2
+              const Padding(
+                padding: EdgeInsets.all(10.0),
+                child: Row(
+                  children: [],
+                ),
               ),
 
               // Section 3
@@ -103,41 +90,35 @@ class SleepPage extends StatelessWidget {
               // Section 4
               const Padding(
                 padding: EdgeInsets.all(10.0),
-                child: AppCardBoxLarge(
-                  color: Color(0xFF4472F0),
-                  title: 'The ocean moon',
-                  svg: 'sleep_bg',
-                  description:
-                      'Non-stop 8- hour mixes of our most popular sleep audio',
+                child: AppCardRectangle(
+                  color: Color(0xFFF1DDCF),
+                  bubbleColor: [
+                    Color(0xFFECD3C2),
+                    Color(0xFFFF7C6B),
+                    Color(0xFFFAC978)
+                  ],
+                  title: 'Daily Calm',
+                  type: 'APR 30',
+                  duration: 'PAUSE PRACTICE',
                 ),
               ),
 
               // Section 5
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Kolom pertama
                     Expanded(
                       child: Column(
-                        children: recomended
+                        children: items
                             .asMap()
                             .entries
                             .where((entry) =>
                                 entry.key % 2 == 0) // Filter elemen genap
-                            .map(
-                              (entry) => Container(
-                                margin: const EdgeInsets.only(bottom: 20),
-                                child: AppCardTile(
-                                    color: Color(int.parse(
-                                        '0xFF${entry.value['color']}')),
-                                    svg: entry.value['svg'],
-                                    title: entry.value['title'],
-                                    type: entry.value['type'],
-                                    duration: entry.value['duration']),
-                              ),
-                            )
+                            .map((entry) => buildGridItem(
+                                entry.value['text'], entry.value['svg']))
                             .toList(),
                       ),
                     ),
@@ -145,23 +126,13 @@ class SleepPage extends StatelessWidget {
                     // Kolom kedua
                     Expanded(
                       child: Column(
-                        children: recomended
+                        children: items
                             .asMap()
                             .entries
                             .where((entry) =>
                                 entry.key % 2 != 0) // Filter elemen ganjil
-                            .map(
-                              (entry) => Container(
-                                margin: const EdgeInsets.only(bottom: 20),
-                                child: AppCardTile(
-                                    color: Color(int.parse(
-                                        '0xFF${entry.value['color']}')),
-                                    svg: entry.value['svg'],
-                                    title: entry.value['title'],
-                                    type: entry.value['type'],
-                                    duration: entry.value['duration']),
-                              ),
-                            )
+                            .map((entry) => buildGridItem(
+                                entry.value['text'], entry.value['svg']))
                             .toList(),
                       ),
                     ),

@@ -12,8 +12,8 @@ class AppCircleButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 55,
-        height: 55,
+        width: 45,
+        height: 45,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isTransparent
