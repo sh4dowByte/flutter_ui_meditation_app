@@ -57,9 +57,6 @@ class ChoseTopicPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          SizedBox(
-            width: double.infinity,
-          ),
           Positioned(
             top: 100,
             right: 0,
@@ -84,14 +81,14 @@ class ChoseTopicPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Flexible(
-                flex: 3,
+                flex: 4,
                 child: Padding(
                   padding: EdgeInsets.all(15),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        height: 60,
+                        height: 50,
                       ),
                       Text(
                         'What Brings you',
@@ -111,7 +108,7 @@ class ChoseTopicPage extends StatelessWidget {
                 ),
               ),
               Flexible(
-                flex: 11,
+                flex: 12,
                 child: ListView(
                   padding: const EdgeInsets.all(8.0),
                   children: [
@@ -189,6 +186,7 @@ class AppTopicItems extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.only(bottom: 10),
         margin: const EdgeInsets.all(8),
         // height: height,
@@ -196,30 +194,32 @@ class AppTopicItems extends StatelessWidget {
           color: color,
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
-        child: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 20),
-              SvgPicture.asset(
-                svg,
-                fit: BoxFit
-                    .contain, // Menghindari overflow dengan menjaga rasio aspek
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 20),
+            SvgPicture.asset(
+              svg,
+              fit: BoxFit
+                  .contain, // Menghindari overflow dengan menjaga rasio aspek
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                children: [
+                  Text(
+                    text,
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleMedium!
+                        .copyWith(color: textColor),
+                    textAlign: TextAlign.start,
+                  ),
+                ],
               ),
-              SizedBox(height: 20),
-              SizedBox(
-                width: 130,
-                child: Text(
-                  text,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(color: textColor),
-                  textAlign: TextAlign.start,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
