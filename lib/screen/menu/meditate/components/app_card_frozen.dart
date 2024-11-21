@@ -63,7 +63,10 @@ class AppCardFrozen extends StatelessWidget {
                       child: Center(
                         child: Text(
                           text,
-                          style: Theme.of(context).textTheme.titleMedium,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(color: Colors.white),
                           textAlign: TextAlign.start,
                         ),
                       ),

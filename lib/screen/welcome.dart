@@ -126,8 +126,8 @@ class WelcomePageDark extends StatelessWidget {
           ),
           Positioned(
             bottom: 300,
-            left: 0,
-            right: 0,
+            left: 44,
+            right: -44,
             child: SvgPicture.asset(
               'assets/images/welcome/welcome_dark_bird.svg',
               width: MediaQuery.of(context)
