@@ -36,98 +36,82 @@ class SignUpPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Flexible(
-                  flex: 1,
-                  child: Row(
-                    children: [
-                      AppBackButton(
-                        onTap: () => Navigator.pop(context),
-                      )
-                    ],
-                  ),
+                Row(
+                  children: [
+                    AppBackButton(
+                      onTap: () => Navigator.pop(context),
+                    )
+                  ],
                 ),
-                Flexible(
-                  flex: 5,
-                  child: Text(
-                    'Create your account ',
-                    style: Theme.of(context).textTheme.headlineMedium,
-                    textAlign: TextAlign.left,
-                  ),
+                Text(
+                  'Create your account ',
+                  style: Theme.of(context).textTheme.headlineMedium,
+                  textAlign: TextAlign.left,
                 ),
-                Flexible(
-                  flex: 5,
-                  child: Column(
-                    children: [
-                      AppButton(
-                        'CONTINUE WITH FACEBOOK',
-                        icon: SvgPicture.asset(
-                          'assets/images/welcome/facebook.svg',
-                        ),
-                        color: const Color(0xFF7583CA),
+                Column(
+                  children: [
+                    AppButton(
+                      'CONTINUE WITH FACEBOOK',
+                      icon: SvgPicture.asset(
+                        'assets/images/welcome/facebook.svg',
                       ),
-                      const SizedBox(height: 20),
-                      AppButton(
-                        'CONTINUE WITH GOOGLE',
-                        isReverse: true,
-                        icon: SvgPicture.asset(
-                          'assets/images/welcome/google.svg',
-                        ),
-                      ),
-                      const SizedBox(height: 40),
-                      Text(
-                        'OR LOG IN WITH EMAIL',
-                        style: Theme.of(context).textTheme.titleSmall,
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  flex: 8,
-                  child: Column(
-                    children: [
-                      const AppInputWithValidation(
-                        hintText: 'Name',
-                      ),
-                      const SizedBox(height: 20),
-                      const AppInputWithValidation(
-                        hintText: 'Email',
-                      ),
-                      const SizedBox(height: 20),
-                      const AppPasswordInput(
-                        hintText: 'Password',
-                      ),
-                      const SizedBox(height: 20),
-                      const AppAgreePrivacyPolicy(),
-                      const SizedBox(height: 20),
-                      AppButton(
-                        'GET STARTED',
-                        onTap: () =>
-                            Navigator.pushNamed(context, Routes.welcome),
-                      ),
-                    ],
-                  ),
-                ),
-                Flexible(
-                  flex: 1,
-                  child: RichText(
-                    text: TextSpan(
-                      text: 'ALREADY HAVE AN ACCOUNT? ',
-                      style: Theme.of(context).textTheme.titleSmall,
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: 'SIGN IN',
-                          style: const TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF7583CA),
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              Navigator.pushNamed(context, Routes.signIn);
-                              // Handle the click
-                            },
-                        ),
-                      ],
+                      color: const Color(0xFF7583CA),
                     ),
+                    const SizedBox(height: 20),
+                    AppButton(
+                      'CONTINUE WITH GOOGLE',
+                      isReverse: true,
+                      icon: SvgPicture.asset(
+                        'assets/images/welcome/google.svg',
+                      ),
+                    ),
+                    const SizedBox(height: 40),
+                    Text(
+                      'OR LOG IN WITH EMAIL',
+                      style: Theme.of(context).textTheme.titleSmall,
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    const AppInputWithValidation(
+                      hintText: 'Name',
+                    ),
+                    const SizedBox(height: 20),
+                    const AppInputWithValidation(
+                      hintText: 'Email',
+                    ),
+                    const SizedBox(height: 20),
+                    const AppPasswordInput(
+                      hintText: 'Password',
+                    ),
+                    const SizedBox(height: 20),
+                    const AppAgreePrivacyPolicy(),
+                    const SizedBox(height: 20),
+                    AppButton(
+                      'GET STARTED',
+                      onTap: () => Navigator.pushNamed(context, Routes.welcome),
+                    ),
+                  ],
+                ),
+                RichText(
+                  text: TextSpan(
+                    text: 'ALREADY HAVE AN ACCOUNT? ',
+                    style: Theme.of(context).textTheme.titleSmall,
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: 'SIGN IN',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF7583CA),
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushNamed(context, Routes.signIn);
+                            // Handle the click
+                          },
+                      ),
+                    ],
                   ),
                 ),
               ],
