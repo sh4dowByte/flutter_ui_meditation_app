@@ -1,5 +1,11 @@
 ![1732238804004](image/README/1732238804004.png)
 
+<p align="center">
+    <img src="https://github.com/sh4dowByte/flutter_ui_meditation_app/actions/workflows/main.yaml/badge.svg?branch=release" alt="CI/CD Badge" style="max-width: 100%;">
+    <img src="https://badgen.net/badge/Flutter/3.19.3/blue" alt="Flutter Version" style="max-width: 100%;">
+    <img src="https://badgen.net/badge/Dart/3.3.1/blue" alt="Dart Version" style="max-width: 100%;">
+</p>
+
 # Flutter Meditation App UI
 
 Flutter Meditation App UI is a mobile application built using Flutter. This project is a result of slicing a design created in Figma, with a focus on a modern and responsive user interface to deliver an optimal user experience.
