@@ -74,25 +74,6 @@ Proyek ini dibangun dengan teknologi berikut:
 | ![1732241556240](image/README/1732241556240.png) | ![1732241564682](image/README/1732241564682.png) |
 | ![1732241576575](image/README/1732241576575.png) | ![1732241587538](image/README/1732241587538.png) |
 
-## 🤝 Kontribusi
-
-Kontribusi sangat disambut! Jika Anda memiliki ide, laporan bug, atau perbaikan, silakan buat *issue* atau *pull request*.
-
-1. Fork repository ini.
-2. Buat branch fitur:
-   ```bash
-   git checkout -b fitur-anda
-   ```
-3. Commit perubahan Anda:
-   ```bash
-   git commit -m "Menambahkan fitur baru"
-   ```
-4. Push ke branch Anda:
-   ```bash
-   git push origin fitur-anda
-   ```
-5. Buat Pull Request.
-
 ## 📝 Lisensi
 
 Proyek ini dilisensikan di bawah [MIT License](LICENSE).

@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
+import '/widgets/components.dart';
 
 import '../config/routes.dart';
-import 'menu/home/components/app_card_tile.dart';
+import 'menu/home/widgets/app_card_tile.dart';
 
 class PlayOnPage extends StatefulWidget {
   const PlayOnPage({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/home/components/app_card_tile.dart';
+import '/widgets/components.dart';
+import '/screen/menu/home/widgets/app_card_tile.dart';
 
 class SleepMusic extends StatelessWidget {
   const SleepMusic({super.key});

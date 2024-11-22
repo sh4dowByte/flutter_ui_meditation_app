@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../components/components.dart';
+import '../widgets/components.dart';
 import '../config/routes.dart';
 
 class SignUpAndSigninPage extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
+import 'package:flutter_ui_meditation_app/widgets/components.dart';
 
 import '../config/routes.dart';
 

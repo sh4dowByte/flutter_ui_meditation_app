@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/meditate/components/app_category.dart';
-import '../home/components/app_card_rectangle.dart';
+import '/screen/menu/meditate/components/app_category.dart';
+import '../home/widgets/app_card_rectangle.dart';
 import 'components/app_card_frozen.dart';
 
 class MeditatePage extends StatelessWidget {

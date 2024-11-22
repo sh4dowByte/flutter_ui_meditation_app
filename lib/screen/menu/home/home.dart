@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
-import 'components/app_card_rectangle.dart';
-import 'components/app_card_box.dart';
-import 'components/app_card_tile.dart';
+import 'package:flutter_ui_meditation_app/widgets/components.dart';
+import 'widgets/app_card_rectangle.dart';
+import 'widgets/app_card_box.dart';
+import 'widgets/app_card_tile.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

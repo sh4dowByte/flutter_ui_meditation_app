@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/home/components/app_card_box_large.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/home/components/app_card_tile.dart';
-import 'package:flutter_ui_meditation_app/screen/menu/meditate/components/app_category.dart';
+import '/screen/menu/home/widgets/app_card_box_large.dart';
+import '/screen/menu/home/widgets/app_card_tile.dart';
+import '/screen/menu/meditate/components/app_category.dart';
 
 class SleepPage extends StatelessWidget {
   const SleepPage({super.key});

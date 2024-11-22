@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/components/app_circle_button.dart';
+import '/widgets/app_circle_button.dart';
 
 class MusicPage extends StatefulWidget {
   const MusicPage({super.key});
