@@ -147,268 +147,263 @@ class _PlayOnPageState extends State<PlayOnPage>
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder:
-              (BuildContext context, bool innnerBoxIsScrolled) {
-            return <Widget>[
-              SliverAppBar(
-                expandedHeight: 290.0,
-                floating: false,
-                pinned: true,
-                automaticallyImplyLeading: false,
-                titleSpacing: 0.0,
-                centerTitle: false,
-                elevation: 0.0,
-                leadingWidth: 0.0,
-                title: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          AppCircleButton(
-                              onTap: () => Navigator.pop(context),
-                              icon: Icon(
-                                Icons.arrow_back,
-                                color: Colors.black,
-                              )),
-                          SizedBox(width: 15),
-                          AnimatedOpacity(
-                            opacity: innnerBoxIsScrolled ? 1.0 : 0.0,
-                            duration: const Duration(seconds: 1),
-                            curve: Curves.ease,
-                            child: const Text(
-                              'Night Island',
-                              style: TextStyle(
-                                  fontSize: 24, fontWeight: FontWeight.bold),
-                            ),
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innnerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              expandedHeight: 290.0,
+              floating: false,
+              pinned: true,
+              automaticallyImplyLeading: false,
+              titleSpacing: 0.0,
+              centerTitle: false,
+              elevation: 0.0,
+              leadingWidth: 0.0,
+              title: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        AppCircleButton(
+                            onTap: () => Navigator.pop(context),
+                            icon: Icon(
+                              Icons.arrow_back,
+                              color: Colors.black,
+                            )),
+                        SizedBox(width: 15),
+                        AnimatedOpacity(
+                          opacity: innnerBoxIsScrolled ? 1.0 : 0.0,
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.ease,
+                          child: const Text(
+                            'Night Island',
+                            style: TextStyle(
+                                fontSize: 24, fontWeight: FontWeight.bold),
                           ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          AppCircleButton(
-                            isTransparent: true,
-                            icon: Icon(Icons.download, color: Colors.white),
-                          ),
-                          SizedBox(width: 15),
-                          AppCircleButton(
-                            isTransparent: true,
-                            icon: Icon(Icons.heart_broken, color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                flexibleSpace: FlexibleSpaceBar(
-                  background: Container(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    child: ClipRRect(
-                      borderRadius: const BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                      child: HeaderBodySliver(),
+                        ),
+                      ],
                     ),
+                    Row(
+                      children: [
+                        AppCircleButton(
+                          isTransparent: true,
+                          icon: Icon(Icons.download, color: Colors.white),
+                        ),
+                        SizedBox(width: 15),
+                        AppCircleButton(
+                          isTransparent: true,
+                          icon: Icon(Icons.heart_broken, color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              flexibleSpace: FlexibleSpaceBar(
+                background: Container(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight: Radius.circular(20),
+                    ),
+                    child: HeaderBodySliver(),
                   ),
                 ),
               ),
-            ];
-          },
-          body: Stack(
-            children: [
-              Builder(
-                builder: (BuildContext context) {
-                  return SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Night Island',
-                            style: Theme.of(context).textTheme.displaySmall,
-                          ),
-                          SizedBox(height: 15),
-                          Row(
-                            children: [
-                              Text(
-                                '45 MIN',
-                                style: Theme.of(context).textTheme.bodySmall,
-                              ),
-                              Text(
-                                '-',
-                                style: Theme.of(context).textTheme.bodySmall,
-                              ),
-                              Text(
-                                'SLEEP MUSIC',
-                                style: Theme.of(context).textTheme.bodySmall,
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 20),
-                          Text(
-                            'Ease the mind into a restful night’s sleep  with these deep, amblent tones.',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall!
-                                .copyWith(fontSize: 16),
-                          ),
-                          SizedBox(height: 30),
-                          Row(
-                            children: [
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.heart_broken,
-                                    color: Color(0xFFFF84A2),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    '24.234 Favorits',
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Icon(
-                                    Icons.headphones,
-                                    color: Color(0xFF67C8C1),
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    '24.234 Favorits',
-                                    style:
-                                        Theme.of(context).textTheme.bodyMedium,
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 30),
-                          if (!isPlay) ...[
-                            Divider(),
-                            SizedBox(height: 30),
+            ),
+          ];
+        },
+        body: Stack(
+          children: [
+            Builder(
+              builder: (BuildContext context) {
+                return SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Night Island',
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        SizedBox(height: 15),
+                        Row(
+                          children: [
                             Text(
-                              'Related',
-                              style: Theme.of(context).textTheme.headlineSmall,
+                              '45 MIN',
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
-                            SizedBox(height: 20),
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                // Kolom pertama
-                                Expanded(
-                                  child: Column(
-                                    children: recomended
-                                        .asMap()
-                                        .entries
-                                        .where((entry) =>
-                                            entry.key % 2 ==
-                                            0) // Filter elemen genap
-                                        .map(
-                                          (entry) => Container(
-                                            margin: const EdgeInsets.only(
-                                                bottom: 20),
-                                            child: AppCardTile(
-                                                color: Color(int.parse(
-                                                    '0xFF${entry.value['color']}')),
-                                                svg: entry.value['svg'],
-                                                title: entry.value['title'],
-                                                type: entry.value['type'],
-                                                duration:
-                                                    entry.value['duration']),
-                                          ),
-                                        )
-                                        .toList(),
-                                  ),
-                                ),
-                                const SizedBox(width: 8),
-                                // Kolom kedua
-                                Expanded(
-                                  child: Column(
-                                    children: recomended
-                                        .asMap()
-                                        .entries
-                                        .where((entry) =>
-                                            entry.key % 2 !=
-                                            0) // Filter elemen ganjil
-                                        .map(
-                                          (entry) => Container(
-                                            margin: const EdgeInsets.only(
-                                                bottom: 20),
-                                            child: AppCardTile(
-                                                color: Color(int.parse(
-                                                    '0xFF${entry.value['color']}')),
-                                                svg: entry.value['svg'],
-                                                title: entry.value['title'],
-                                                type: entry.value['type'],
-                                                duration:
-                                                    entry.value['duration']),
-                                          ),
-                                        )
-                                        .toList(),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ] else ...[
                             Text(
-                              'Pick a Narrator',
-                              style: Theme.of(context).textTheme.headlineSmall,
+                              '-',
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
-                            SizedBox(height: 25),
-                            TabBar(
-                              controller: _tabController,
-                              labelColor: Theme.of(context).primaryColor,
-                              unselectedLabelColor: Colors.grey,
-                              indicatorColor: Theme.of(context).primaryColor,
-                              tabs: const [
-                                Tab(text: "Male Voice"),
-                                Tab(text: "Female Voice"),
-                              ],
-                            ),
-                            SizedBox(
-                              height: MediaQuery.of(context).size.height *
-                                  0.4, // Misalnya 40% layar
-                              child: TabBarView(
-                                controller: _tabController,
-                                children: const [
-                                  VoiceTabPage(),
-                                  VoiceTabPage(),
-                                ],
-                              ),
+                            Text(
+                              'SLEEP MUSIC',
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
                           ],
+                        ),
+                        SizedBox(height: 20),
+                        Text(
+                          'Ease the mind into a restful night’s sleep  with these deep, amblent tones.',
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .copyWith(fontSize: 16),
+                        ),
+                        SizedBox(height: 30),
+                        Row(
+                          children: [
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.heart_broken,
+                                  color: Color(0xFFFF84A2),
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  '24.234 Favorits',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Icon(
+                                  Icons.headphones,
+                                  color: Color(0xFF67C8C1),
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  '24.234 Favorits',
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 30),
+                        if (!isPlay) ...[
+                          Divider(),
+                          SizedBox(height: 30),
+                          Text(
+                            'Related',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Kolom pertama
+                              Expanded(
+                                child: Column(
+                                  children: recomended
+                                      .asMap()
+                                      .entries
+                                      .where((entry) =>
+                                          entry.key % 2 ==
+                                          0) // Filter elemen genap
+                                      .map(
+                                        (entry) => Container(
+                                          margin:
+                                              const EdgeInsets.only(bottom: 20),
+                                          child: AppCardTile(
+                                              color: Color(int.parse(
+                                                  '0xFF${entry.value['color']}')),
+                                              svg: entry.value['svg'],
+                                              title: entry.value['title'],
+                                              type: entry.value['type'],
+                                              duration:
+                                                  entry.value['duration']),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              // Kolom kedua
+                              Expanded(
+                                child: Column(
+                                  children: recomended
+                                      .asMap()
+                                      .entries
+                                      .where((entry) =>
+                                          entry.key % 2 !=
+                                          0) // Filter elemen ganjil
+                                      .map(
+                                        (entry) => Container(
+                                          margin:
+                                              const EdgeInsets.only(bottom: 20),
+                                          child: AppCardTile(
+                                              color: Color(int.parse(
+                                                  '0xFF${entry.value['color']}')),
+                                              svg: entry.value['svg'],
+                                              title: entry.value['title'],
+                                              type: entry.value['type'],
+                                              duration:
+                                                  entry.value['duration']),
+                                        ),
+                                      )
+                                      .toList(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ] else ...[
+                          Text(
+                            'Pick a Narrator',
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
+                          SizedBox(height: 25),
+                          TabBar(
+                            controller: _tabController,
+                            labelColor: Theme.of(context).primaryColor,
+                            unselectedLabelColor: Colors.grey,
+                            indicatorColor: Theme.of(context).primaryColor,
+                            tabs: const [
+                              Tab(text: "Male Voice"),
+                              Tab(text: "Female Voice"),
+                            ],
+                          ),
+                          SizedBox(
+                            height: MediaQuery.of(context).size.height *
+                                0.4, // Misalnya 40% layar
+                            child: TabBarView(
+                              controller: _tabController,
+                              children: const [
+                                VoiceTabPage(),
+                                VoiceTabPage(),
+                              ],
+                            ),
+                          ),
                         ],
-                      ),
+                      ],
                     ),
-                  );
-                },
-              ),
-              Visibility(
-                visible: !isPlay,
-                child: Align(
-                    alignment: Alignment.bottomCenter,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: AppButton(
-                        'PLAY',
-                        onTap: () {
-                          setState(() {
-                            isPlay = !isPlay;
-                          });
-                        },
-                      ),
-                    )),
-              ),
-            ],
-          ),
+                  ),
+                );
+              },
+            ),
+            Visibility(
+              visible: !isPlay,
+              child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: AppButton(
+                      'PLAY',
+                      onTap: () {
+                        setState(() {
+                          isPlay = !isPlay;
+                        });
+                      },
+                    ),
+                  )),
+            ),
+          ],
         ),
       ),
     );

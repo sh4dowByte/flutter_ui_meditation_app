@@ -98,8 +98,6 @@ class SleepMusic extends StatelessWidget {
       body: SafeArea(
         child: ListView(
           children: [
-            const SizedBox(height: 20),
-
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(20.0),

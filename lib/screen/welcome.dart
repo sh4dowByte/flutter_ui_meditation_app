@@ -48,7 +48,7 @@ class WelcomePageLight extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 50,
+            top: 70,
             left: 0,
             right: 0,
             child: Padding(
