@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:floating_draggable_widget/floating_draggable_widget.dart';
+import 'package:flutter/services.dart';
 
 import 'config/routes.dart';
 import 'screen/screen.dart';
@@ -19,6 +20,24 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   ThemeMode themeMode = ThemeMode.light;
 
+  void _updateStatusBar() {
+    // Atur gaya status bar berdasarkan mode tema
+    final isDark = themeMode == ThemeMode.dark;
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent, // Transparan
+        statusBarIconBrightness:
+            isDark ? Brightness.light : Brightness.dark, // Ikon
+        systemNavigationBarColor:
+            isDark ? Colors.black : Colors.white, // Warna navigasi
+        systemNavigationBarIconBrightness:
+            isDark ? Brightness.light : Brightness.dark, // Ikon navigasi
+        statusBarBrightness:
+            isDark ? Brightness.dark : Brightness.light, // Untuk perangkat iOS
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,7 +52,7 @@ class _MyAppState extends State<MyApp> {
               // Navigator widget
               FloatingDraggableWidget(
                 autoAlign: true,
-                dx: MediaQuery.of(context).size.width - 60,
+                dx: 1,
                 dy: 70,
                 floatingWidget: GestureDetector(
                   onTap: () {
@@ -42,6 +61,7 @@ class _MyAppState extends State<MyApp> {
                           ? ThemeMode.light
                           : ThemeMode.dark;
                     });
+                    _updateStatusBar();
                   },
                   child: Image.asset(
                     themeMode == ThemeMode.dark

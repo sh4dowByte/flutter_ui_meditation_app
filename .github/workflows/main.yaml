@@ -105,5 +105,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/flutter-apk/app-release.apk,build/app/outputs/bundle/release/app-release.aab,build/ios_build.tar.gz"
-          tag: v${{ env.VERSION }}
+          tag: v${{ env.VERSION }}-${{ github.run_number }}
           token: ${{ secrets.GITHUB_TOKEN }} 

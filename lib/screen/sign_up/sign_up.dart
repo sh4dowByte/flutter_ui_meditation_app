@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
-import 'package:flutter_ui_meditation_app/screen/sign_up/components/app_agree_privacy_policy.dart';
+import 'package:flutter_ui_meditation_app/widgets/components.dart';
+import 'package:flutter_ui_meditation_app/screen/sign_up/widgets/app_agree_privacy_policy.dart';
 
 import '../../config/routes.dart';
 
@@ -31,7 +31,7 @@ class SignUpPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,

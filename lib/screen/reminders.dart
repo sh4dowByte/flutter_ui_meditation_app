@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../components/components.dart';
+import '../widgets/components.dart';
 import '../config/routes.dart';
 
 class RemindersPage extends StatefulWidget {

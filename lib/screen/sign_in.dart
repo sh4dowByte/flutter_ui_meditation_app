@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
+import 'package:flutter_ui_meditation_app/widgets/components.dart';
 
 import '../config/routes.dart';
 
@@ -30,13 +30,13 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Flexible(
-                  flex: 1,
+                  flex: 2,
                   child: Row(
                     children: [
                       AppBackButton(
@@ -46,7 +46,7 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                  flex: 5,
+                  flex: 4,
                   child: Text(
                     'Welcome Back!',
                     style: Theme.of(context).textTheme.headlineMedium,
@@ -54,7 +54,7 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                  flex: 5,
+                  flex: 6,
                   child: Column(
                     children: [
                       AppButton(
@@ -81,7 +81,7 @@ class SignInPage extends StatelessWidget {
                   ),
                 ),
                 Flexible(
-                  flex: 8,
+                  flex: 7,
                   child: Column(
                     children: [
                       const AppTextInput(
@@ -97,7 +97,7 @@ class SignInPage extends StatelessWidget {
                         onTap: () =>
                             Navigator.pushNamed(context, Routes.welcome),
                       ),
-                      const SizedBox(height: 40),
+                      const SizedBox(height: 12),
                       Text(
                         'Forgot Password?',
                         style: Theme.of(context).textTheme.titleSmall,

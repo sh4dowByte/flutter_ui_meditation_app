@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_ui_meditation_app/components/components.dart';
+import '/widgets/components.dart';
 
 import '../config/routes.dart';
 
@@ -48,7 +48,7 @@ class WelcomePageLight extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 50,
+            top: 70,
             left: 0,
             right: 0,
             child: Padding(
