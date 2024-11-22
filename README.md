@@ -2,59 +2,42 @@
 
 # Flutter Meditation App UI
 
-Flutter Meditation App UI adalah aplikasi mobile yang dibuat menggunakan Flutter. Proyek ini merupakan hasil slicing dari desain yang dibuat di Figma, dengan fokus pada tampilan antarmuka yang modern dan responsif untuk mendukung pengalaman pengguna yang optimal.
+Flutter Meditation App UI is a mobile application built using Flutter. This project is a result of slicing a design created in Figma, with a focus on a modern and responsive user interface to deliver an optimal user experience.
 
-## 🎨 Desain
+## 🎨 Design
 
-Desain aplikasi ini dibuat berdasarkan file Figma yang telah disediakan. Slicing dilakukan secara detail untuk memastikan aplikasi merepresentasikan desain dengan akurat.
+The design of this application is based on the provided Figma file. The slicing process was carried out meticulously to ensure the application accurately represents the design.
 
-## 🚀 Fitur Utama
+Source: [Figma File by Afsar](https://www.figma.com/community/file/882888114457713282)
 
-- **Desain Responsif**: Mendukung berbagai ukuran layar dengan elemen antarmuka yang responsif.
-- **Dark & Light Theme**: Mendukung mode gelap dan terang untuk pengalaman pengguna yang lebih nyaman.
-- **Navigasi Mulus**: Implementasi navigasi menggunakan Flutter Navigator.
-- **Komponen Reusable**: Komponen dibuat modular untuk mempermudah pengembangan dan pemeliharaan.
+## 🚀 Feature
 
-## 🛠️ Teknologi
+- **Responsive Design**: Supports various screen sizes with responsive UI elements.
+- **Dark & Light Theme**: Provides both dark and light modes for a more comfortable user experience.
+- **Seamless Navigation**: Implements navigation using Flutter Navigator.
+- **Reusable Components**: Modular components for easier development and maintenance.
 
-Proyek ini dibangun dengan teknologi berikut:
+## 🛠️ Technologies
 
-- **[Flutter](https://flutter.dev/)**: Framework untuk pengembangan aplikasi lintas platform.
-- **[Dart](https://dart.dev/)**: Bahasa pemrograman utama untuk Flutter.
-- **[Google Fonts](https://fonts.google.com/)**: Untuk integrasi font kustom.
-- **[Figma](https://www.figma.com/)**: Sebagai referensi desain aplikasi.
+This project is built using the following technologies:
 
-## 📂 Struktur Folder
+- **[Flutter](https://flutter.dev/)**: A framework for cross-platform application development.
+- **[Dart](https://dart.dev/)**: The primary programming language for Flutter.
+- **[Google Fonts](https://fonts.google.com/)**: For custom font integration.
+- **[Figma](https://www.figma.com/)**: Used as the application's design reference.
+
+## 📂 Folder Structure  
 
 ```plaintext
 .
-├── assets/              # Berisi gambar, ikon, dan aset lainnya
-├── lib/
-│   ├── config/          # Konfigurasi aplikasi (theme, routes, dll.)
-│   ├── screens/         # Halaman utama aplikasi
-│   ├── widgets/         # Komponen UI reusable
-│   ├── main.dart        # File utama aplikasi
-└── pubspec.yaml         # Konfigurasi proyek Flutter
+├── assets/              # Contains images, icons, and other assets  
+├── lib/  
+│   ├── config/          # Application configuration (theme, routes, etc.)  
+│   ├── screens/         # Main application pages  
+│   ├── widgets/         # Reusable UI components  
+│   ├── main.dart        # Main application file  
+└── pubspec.yaml         # Flutter project configuration  
 ```
-
-## 🔧 Instalasi
-
-1. Clone repository ini:
-
-   ```bash
-   git clone https://github.com/username/flutter_meditation_app.git
-   cd flutter_meditation_app
-   ```
-2. Install dependencies:
-
-   ```bash
-   flutter pub get
-   ```
-3. Jalankan aplikasi:
-
-   ```bash
-   flutter run
-   ```
 
 ## 🖼️ Screenshot
 
@@ -74,10 +57,10 @@ Proyek ini dibangun dengan teknologi berikut:
 | ![1732241556240](image/README/1732241556240.png) | ![1732241564682](image/README/1732241564682.png) |
 | ![1732241576575](image/README/1732241576575.png) | ![1732241587538](image/README/1732241587538.png) |
 
-## 📝 Lisensi
+## 📝 License  
 
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).  
 
----
+---  
 
-🎉 **Selamat mengembangkan!** Jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami.
+🎉 **Happy developing!** If you have any questions, feel free to reach out to us.  
