@@ -1,3 +1,4 @@
+![1732238804004](image/README/1732238804004.png)
 # Flutter Meditation App UI
 
 Flutter Meditation App UI adalah aplikasi mobile yang dibuat menggunakan Flutter. Proyek ini merupakan hasil slicing dari desain yang dibuat di Figma, dengan fokus pada tampilan antarmuka yang modern dan responsif untuk mendukung pengalaman pengguna yang optimal.
