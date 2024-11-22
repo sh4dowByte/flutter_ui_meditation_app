@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
               // Navigator widget
               FloatingDraggableWidget(
                 autoAlign: true,
-                dx: MediaQuery.of(context).size.width - 60,
+                dx: 1,
                 dy: 70,
                 floatingWidget: GestureDetector(
                   onTap: () {
