@@ -63,11 +63,7 @@ This project is built using the following technologies:
 | ![1732241556240](image/README/1732241556240.png) | ![1732241564682](image/README/1732241564682.png) |
 | ![1732241576575](image/README/1732241576575.png) | ![1732241587538](image/README/1732241587538.png) |
 
-## 📝 License  
 
-This project is licensed under the [MIT License](LICENSE).  
-
----  
 
 ## Disclaimer
 
