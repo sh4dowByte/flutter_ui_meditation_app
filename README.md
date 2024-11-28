@@ -4,6 +4,7 @@
     <img src="https://github.com/sh4dowByte/flutter_ui_meditation_app/actions/workflows/main.yaml/badge.svg?branch=release" alt="CI/CD Badge" style="max-width: 100%;">
     <img src="https://badgen.net/badge/Flutter/3.19.3/blue" alt="Flutter Version" style="max-width: 100%;">
     <img src="https://badgen.net/badge/Dart/3.3.1/blue" alt="Dart Version" style="max-width: 100%;">
+    <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg" alt="Dart Version" style="max-width: 100%;">
 </p>
 
 # Flutter Meditation App UI
@@ -13,8 +14,6 @@ Flutter Meditation App UI is a mobile application built using Flutter. This proj
 ## 🎨 Design
 
 The design of this application is based on the provided Figma file. The slicing process was carried out meticulously to ensure the application accurately represents the design.
-
-Source: [Figma File by Afsar](https://www.figma.com/community/file/882888114457713282)
 
 ## 🚀 Feature
 
@@ -32,7 +31,7 @@ This project is built using the following technologies:
 - **[Google Fonts](https://fonts.google.com/)**: For custom font integration.
 - **[Figma](https://www.figma.com/)**: Used as the application's design reference.
 
-## 📂 Folder Structure  
+## 📂 Folder Structure
 
 ```plaintext
 .
@@ -63,8 +62,15 @@ This project is built using the following technologies:
 | ![1732241556240](image/README/1732241556240.png) | ![1732241564682](image/README/1732241564682.png) |
 | ![1732241576575](image/README/1732241576575.png) | ![1732241587538](image/README/1732241587538.png) |
 
+## License
 
+This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0).
+You are free to use this project for personal or educational purposes, but commercial use is not allowed.
+
+For more details, refer to the [full license text](LICENSE).
 
 ## Disclaimer
 
-The design of this application is based on a free Figma template available on the Figma Community. All rights to the original design belong to the respective creator. This implementation is for learning and non-commercial purposes only.
+The design of this application is based on a free Figma template available in the Figma Community. All rights to the original design are retained by the respective creator. This implementation is intended solely for educational and non-commercial purposes.
+
+This project utilizes a design sourced from the Figma Community. Licensing terms of the original design may apply. Please review the original Figma design [here](https://www.figma.com/community/file/882888114457713282) to ensure compliance with its terms before utilizing this project in any capacity.
