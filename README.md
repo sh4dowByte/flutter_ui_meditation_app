@@ -11,6 +11,10 @@
 
 Flutter Meditation App UI is a mobile application built using Flutter. This project is a result of slicing a design created in Figma, with a focus on a modern and responsive user interface to deliver an optimal user experience.
 
+<a href="https://github.com/sh4dowByte/flutter_ui_meditation_app/releases/download/v1.0.0%2B1-7/app-release.apk">
+    <img src="https://playerzon.com/asset/download.png" width="200" data-canonical-src="https://playerzon.com/asset/download.png" style="max-width: 100%;">
+</a>
+
 ## 🎨 Design
 
 The design of this application is based on the provided Figma file. The slicing process was carried out meticulously to ensure the application accurately represents the design.
@@ -74,3 +78,9 @@ For more details, refer to the [full license text](LICENSE).
 The design of this application is based on a free Figma template available in the Figma Community. All rights to the original design are retained by the respective creator. This implementation is intended solely for educational and non-commercial purposes.
 
 This project utilizes a design sourced from the Figma Community. Licensing terms of the original design may apply. Please review the original Figma design [here](https://www.figma.com/community/file/882888114457713282) to ensure compliance with its terms before utilizing this project in any capacity.
+
+## Disclaimer
+
+The design of this application is based on a free Figma template available in the Figma Community, originally created by **[Afsar]**. All rights to the original design are retained by the respective creator. This implementation is intended solely for educational and non-commercial purposes.
+
+This project utilizes a design sourced from the Figma Community, created by **[Afsar]**. Licensing terms of the original design may apply. Please review the original Figma design [here](https://www.figma.com/community/file/882888114457713282) to ensure compliance with its terms before utilizing this project in any capacity.
