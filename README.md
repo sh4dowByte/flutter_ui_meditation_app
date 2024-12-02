@@ -75,12 +75,6 @@ For more details, refer to the [full license text](LICENSE).
 
 ## Disclaimer
 
-The design of this application is based on a free Figma template available in the Figma Community. All rights to the original design are retained by the respective creator. This implementation is intended solely for educational and non-commercial purposes.
-
-This project utilizes a design sourced from the Figma Community. Licensing terms of the original design may apply. Please review the original Figma design [here](https://www.figma.com/community/file/882888114457713282) to ensure compliance with its terms before utilizing this project in any capacity.
-
-## Disclaimer
-
 The design of this application is based on a free Figma template available in the Figma Community, originally created by **[Afsar]**. All rights to the original design are retained by the respective creator. This implementation is intended solely for educational and non-commercial purposes.
 
 This project utilizes a design sourced from the Figma Community, created by **[Afsar]**. Licensing terms of the original design may apply. Please review the original Figma design [here](https://www.figma.com/community/file/882888114457713282) to ensure compliance with its terms before utilizing this project in any capacity.
